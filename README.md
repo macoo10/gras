@@ -2,6 +2,8 @@
 
 > Generate random albums
 
+![](http://i.imgur.com/8ws0UY3.png)
+
 # Overview
 
 Using a fun little method used a few years ago, this
