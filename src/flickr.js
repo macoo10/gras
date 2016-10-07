@@ -1,7 +1,7 @@
 import got from 'got'
 import cheerio from 'cheerio'
 
-export default function flickr() {
+export default async function flickr() {
   return got('https://www.flickr.com/explore/interesting/7days')
   .then(response => {
     const $ = cheerio.load(response.body)

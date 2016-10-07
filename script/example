@@ -1,0 +1,8 @@
+#! /usr/bin/env node
+
+const generateRandomAlbum = require('../lib')
+
+generateRandomAlbum((err, canvas) => {
+  if (err) throw err
+  canvas.pngStream().pipe(process.stdout)
+})

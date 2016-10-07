@@ -7,7 +7,7 @@ export default function quotationspage() {
     const $ = cheerio.load(response.body)
     const quote = $('dt.quote a').slice(-1).eq(0)
     const full = quote.text()
-    const snippet = full.split(' ').slice(-4).join(' ')
+    const snippet = full.split(' ').slice(-4).join(' ').replace(/\.$/,'')
     return {full, snippet}
   })
 }

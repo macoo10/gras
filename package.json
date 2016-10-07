@@ -1,10 +1,11 @@
 {
-  "name": "y",
+  "name": "gras",
   "version": "1.0.0",
-  "description": "Generates a random album based on a given username",
+  "description": "Generates a random album",
   "main": "lib/main.js",
   "scripts": {
     "build": "gulp build",
+    "example": "./script/example | imgcat",
     "test": "xo && ava"
   },
   "author": "Karl Brightman <karl@karlbright.org>",
@@ -17,7 +18,6 @@
     "babel-preset-stage-2": "^6.17.0",
     "babel-register": "^6.16.3",
     "babel-runtime": "^6.11.6",
-    "chalk": "^1.1.3",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-newer": "^1.3.0",
@@ -27,8 +27,14 @@
     "xo": "^0.16.0"
   },
   "dependencies": {
+    "async": "^2.0.1",
+    "canvas": "^1.5.0",
     "cheerio": "^0.22.0",
-    "got": "^6.5.0"
+    "got": "^6.5.0",
+    "inflection": "^1.10.0",
+    "intrinsic-scale": "^3.0.3",
+    "smartcrop": "^1.1.1",
+    "smartcrop-gm": "^1.0.2"
   },
   "ava": {
     "require": [
