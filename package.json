@@ -9,6 +9,7 @@
     "test": "xo && ava"
   },
   "author": "Karl Brightman <karl@karlbright.org>",
+  "repository": "karlbright/gras",
   "license": "MIT",
   "devDependencies": {
     "ava": "^0.16.0",
