@@ -6,6 +6,6 @@ export default function wikipedia() {
   .then(response => {
     const $ = cheerio.load(response.body)
     const title = $('title').text()
-    return {title: title.substr(0, title.indexOf(' - Wikipedia, the free encyclopedia'))}
+    return {title: title.substr(0, title.indexOf(' - Wikipedia, the free encyclopedia')).replace(/ \(.+\)$/,'')}
   })
 }
