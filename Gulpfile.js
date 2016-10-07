@@ -1,0 +1,33 @@
+'use strict'
+
+const plumber = require('gulp-plumber')
+const through = require('through2')
+const chalk = require('chalk')
+const newer = require('gulp-newer')
+const babel = require('gulp-babel')
+const cache = require('gulp-cache')
+const gutil = require('gulp-util')
+const gulp = require('gulp')
+const path = require('path')
+
+const src = 'src/**/*.js'
+const dest = 'lib'
+
+gulp.task('default', ['build'])
+
+gulp.task('build', () => {
+  gulp.src(src)
+  .pipe(plumber({
+    errorHandler(err) {
+      gutil.log(err.stack)
+    },
+  }))
+  .pipe(newer(dest))
+  .pipe(through.obj((file, enc, callback) => {
+    const relativeFilePath = path.relative(__dirname, file.path)
+    gutil.log(`Compiling '${chalk.cyan(relativeFilePath)}'...`)
+    callback(null, file)
+  }))
+  .pipe(cache(babel()))
+  .pipe(gulp.dest(dest))
+})
