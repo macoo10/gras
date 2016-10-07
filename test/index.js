@@ -1,3 +1,9 @@
 import test from 'ava'
+import generateRandomAlbum from '../src'
 
-test(t => t.deepEqual([1, 2], [1, 2]))
+test(async t => {
+  const attributes = await generateRandomAlbum()
+  t.is(typeof attributes.artwork, 'string')
+  t.is(typeof attributes.title, 'string')
+  t.is(typeof attributes.artist, 'string')
+})
