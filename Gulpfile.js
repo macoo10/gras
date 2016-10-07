@@ -1,5 +1,6 @@
 'use strict'
 
+const path = require('path')
 const plumber = require('gulp-plumber')
 const through = require('through2')
 const chalk = require('chalk')
@@ -8,7 +9,6 @@ const babel = require('gulp-babel')
 const cache = require('gulp-cache')
 const gutil = require('gulp-util')
 const gulp = require('gulp')
-const path = require('path')
 
 const src = 'src/**/*.js'
 const dest = 'lib'
@@ -20,7 +20,7 @@ gulp.task('build', () => {
   .pipe(plumber({
     errorHandler(err) {
       gutil.log(err.stack)
-    },
+    }
   }))
   .pipe(newer(dest))
   .pipe(through.obj((file, enc, callback) => {
