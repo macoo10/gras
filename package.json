@@ -1,6 +1,6 @@
 {
   "name": "gras",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Generate random albums",
   "main": "lib/main.js",
   "scripts": {
