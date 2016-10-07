@@ -85,7 +85,7 @@ function artist(canvas, ctx, props, cb) {
   wrapText(
     ctx,
     inflection.titleize(props.artist),
-    20, titleEndY + 10,
+    20, titleEndY + 5,
     172, 15
   )
 

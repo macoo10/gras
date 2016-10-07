@@ -1,7 +1,7 @@
 {
   "name": "gras",
   "version": "1.0.0",
-  "description": "Generates a random album",
+  "description": "Generate random albums",
   "main": "lib/main.js",
   "scripts": {
     "build": "gulp build",
